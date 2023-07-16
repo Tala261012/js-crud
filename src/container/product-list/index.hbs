@@ -14,7 +14,8 @@
 	<div class="cards">
 
 		{{#each list}}
-		<div class="card">
+		{{>product-card data=this}}
+		{{!-- <div class="card">
 			<div class="card__top">
 				<h2 class="card__title">{{name}}</h2>
 				<div class="card__description">{{description}}</div>
@@ -28,7 +29,7 @@
 				</div>
 			</div>
 
-		</div>
+		</div> --}}
 		{{/each}}
 
 	</div>

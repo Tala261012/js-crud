@@ -1,0 +1,58 @@
+@use '../../lib/service.scss' as s;
+
+// .card {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: s.space(6);
+// 	gap: s.space(6);
+// 	justify-content: space-between;
+
+// 	border: 1px solid s.color('light');
+// 	border-radius: s.radius('form');
+// 	box-shadow: 2px 2px 4px 0 s.color('light');
+
+// 	&__top {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: flex-start;
+// 		gap: s.space(3);
+// 	}
+	
+// 	&__title {
+// 		font-size: s.size('formTitle');
+// 		font-weight: bold;
+// 		color: s.color('dark-grey');
+// 	}
+
+// 	&__description {
+// 		font-size: s.size('default');
+// 	}
+
+// 	&__id {
+// 		font-size: s.size('default');
+// 		color: s.color('light-gray');
+// 	}
+
+// 	&__bottom {
+// 		display: grid;
+// 		gap: s.space(3);
+// 	}
+	
+// 	&__bottomLine {
+// 		display: flex;
+// 		gap: s.space(6);
+// 		justify-content: space-between;
+// 		align-items: flex-end;
+// 	}
+	
+// 	&__price {
+// 		font-size: s.size('formTitle');
+// 		color:s.color('black');
+// 	}
+
+// 	&__edit {
+// 		color: s.color('light-blue');
+// 		text-decoration: none;
+// 	}
+	
+// }
