@@ -1,0 +1,33 @@
+$colorMap: (
+	button: #fff,	
+	light: #ddd,
+	light-blue:  rgb(0, 110, 255),
+	dark-grey: #5a5a5a,
+	light-gray: #838383,
+	black: #000,
+	delete: #f84b07,
+);
+
+@function color ($key) {
+	@return map-get($colorMap, $key);
+}
+
+$fontSizeMap: (
+	pageTitle: 26px,
+	formTitle:20px,
+	default: 16px,
+	label: 14px,
+);
+
+@function size ($key) {
+	@return map-get($fontSizeMap, $key);
+}
+
+$borderRadiusMap: (
+	form: 8px,
+	input: 4px,
+);
+
+@function radius ($key) {
+	@return map-get($borderRadiusMap, $key);
+}

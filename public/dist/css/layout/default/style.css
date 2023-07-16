@@ -1,0 +1,18 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 40px;
+}
+.page__title {
+  font-size: 26px;
+  font-weight: bold;
+  color: rgb(0, 110, 255);
+  margin-top: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
