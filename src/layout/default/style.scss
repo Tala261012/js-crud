@@ -1,0 +1,19 @@
+@use '../../lib/service.scss' as s;
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	padding: s.space(8);
+	gap: s.space(10); 
+
+	&__title {
+		font-size: s.size('pageTitle');
+		font-weight: bold;
+		color: s.color('light-blue');
+		margin-top: s.space(4);
+	}
+}

@@ -1,0 +1,49 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<div class="page">
+	<h1 class="page__title">Список товаров:</h1>
+
+	{{#with products}}
+	{{#if isEmpty}}
+	<p>Список товаров пуст</p>
+	{{else}}
+
+	<div class="cards">
+
+		{{#each list}}
+		{{>product-card data=this}}
+		{{!-- <div class="card">
+			<div class="card__top">
+				<h2 class="card__title">{{name}}</h2>
+				<div class="card__description">{{description}}</div>
+			</div>
+
+			<div class="card__bottom">
+				<div class="card__id">ID: {{id}}</div>
+				<div class="card__bottomLine">
+					<div class="card__price">{{price}} грн.</div>
+					<a href="/product-edit?id={{id}}" class="card__edit">Редактировать</a>
+				</div>
+			</div>
+
+		</div> --}}
+		{{/each}}
+
+	</div>
+
+	{{/if}}
+	{{/with}}
+
+	<a class="add__button" href="/product-create">Добавить товар</a>
+
+</div>
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+	Адже наш layout/default.hbs має вже структуру HTML
+	}}
