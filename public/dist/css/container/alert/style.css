@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  gap: 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 0 #ddd;
+  max-width: 940px;
+  width: 100%;
+}
+.form__infoBlock {
+  display: grid;
+  gap: 12px;
+}
+.form__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+.form__info {
+  font-size: 16px;
+}
+.form__button {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  max-width: 200px;
+  width: 100%;
+  height: fit-content;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(0, 110, 255);
+  position: relative;
+  transition-property: background-color, top;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.form__button:hover {
+  background-color: rgb(50, 139, 255);
+}
+.form__button:active {
+  top: 1px;
+}
+
+/*# sourceMappingURL=style.css.map */
