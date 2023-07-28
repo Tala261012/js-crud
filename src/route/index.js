@@ -106,7 +106,7 @@ class Purchase {
   }
 
   static calcBonusAmount = (value) => {
-    return value * Purchase.#BONUS_FACTOR
+    return Math.trunc(value * Purchase.#BONUS_FACTOR)
   }
 
   static updateBonusBalance = (
@@ -156,7 +156,13 @@ class Purchase {
   }
 
   static getList = () => {
-    return Purchase.#list.reverse().map(() => {}) //* деструктуризация
+    return Purchase.#list.reverse().map((item) => {
+      let { id, product, totalPrice } = { ...item }
+      let productTitle = product.title
+      let bonus = Purchase.calcBonusAmount(totalPrice)
+
+      return { id, productTitle, totalPrice, bonus }
+    }) //TODO деструктуризация
   }
 
   static getById = (id) => {
@@ -453,7 +459,7 @@ router.post('/purchase-submit', function (req, res) {
       data: {
         info_title: 'Ошибка',
         info_description: 'Заполните обязательные поля',
-        link: '/purchase-list',
+        link: `/purchase-product?id=${id}`,
       },
     })
   }
@@ -518,6 +524,152 @@ router.post('/purchase-submit', function (req, res) {
     },
   })
 })
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/purchase-list', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  const purchaseList = Purchase.getList()
+
+  console.log(purchaseList)
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-list', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-list',
+
+    data: {
+      purchaseList,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/purchase-info', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  const id = Number(req.query.id)
+  const bonus = Number(req.query.bonus)
+
+  const purchase = Purchase.getById(id)
+
+  let {
+    totalPrice,
+    productPrice,
+    deliveryPrice,
+
+    firstname,
+    lastname,
+    email,
+    phone,
+
+    product,
+  } = { ...purchase }
+
+  const productTitle = product.title
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-info', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-info',
+
+    data: {
+      id,
+      firstname,
+      lastname,
+      email,
+      phone,
+
+      totalPrice,
+      productPrice,
+      deliveryPrice,
+
+      bonus,
+      productTitle,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.get('/purchase-edit-user', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  const id = Number(req.query.id)
+
+  const purchase = Purchase.getById(id)
+
+  let { firstname, lastname, email, phone } = {
+    ...purchase,
+  }
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-edit-user', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-edit-user',
+
+    data: {
+      id,
+      firstname,
+      lastname,
+      email,
+      phone,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+// ↙️ тут вводимо шлях (PATH) до сторінки
+router.post(
+  '/purchase-edit-user-success',
+  function (req, res) {
+    // res.render генерує нам HTML сторінку
+    const id = Number(req.query.id)
+    let { firstname, lastname, email, phone } = req.body
+
+    const result = Purchase.updateById(id, {
+      firstname,
+      lastname,
+      email,
+      phone,
+    })
+    console.log(result)
+
+    // ↙️ cюди вводимо назву файлу з сontainer
+    res.render('alert', {
+      // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+      style: 'alert',
+
+      data: {
+        info_title: 'Упешное выполнение действия',
+        info_description: 'Изменения созранены',
+        link: '/purchase-list',
+      },
+    })
+    // ↑↑ сюди вводимо JSON дані
+  },
+)
 // ================================================================
 
 // ================================================================

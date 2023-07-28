@@ -5,13 +5,14 @@
 @use '../../component/field/style.scss' as field;
 @use '../../component/divider/style.scss' as divider;
 @use '../../component/button/style.scss' as button;
+@use '../../component/purchase-list-item/style.scss' as list-item;
 
 
-.form-card {
+.form {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-start;
+	justify-content: flex-start;
+	align-items: stretch;
 	padding: s.space(6);
 	gap: s.space(6);
 
@@ -21,30 +22,6 @@
 
 	max-width: 940px;
 	width: 100%;
-	min-width: 530px;
-}
-
-.cart {
-	display: flex;
-	flex-direction: column;
-	gap: s.space(3);
-	width: 100%;
-}
-
-.cart__item {
-	display: flex;
-	flex-direction: row;
-	gap: s.space(2);
-	justify-content: space-between;
-
-	font-weight: bold;
-	color: s.color(dark-grey);
-}
-
-.form-card__total {
-	font-weight: bold;
-	font-size: s.size(formTitle);
-	color: s.color(dark-grey);
 }
 
 .item__table {
@@ -52,6 +29,23 @@
 	grid-template-columns: 1fr 1fr;
 	gap: s.space(6);
 	justify-content: flex-start;
+}
 
-	width: 100%
+
+.item__cell {
+	display: flex;
+	flex-direction: column;
+	gap: s.space(3);
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.item__label {
+	font-size: s.size(label);
+	color: s.color(light-gray);
+}
+
+.item__info {
+	font-size: s.size(default);
+	color: s.color(dark-gray);
 }

@@ -1,0 +1,94 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<div class="page">
+	<div class="form">
+		{{> heading title = "Информация о заказе"}}
+
+		{{#with data}}
+		<div class="item__cell">
+			<div class="item__label">ID:</div>
+			<div class="item__info">{{id}}</div>
+		</div>
+
+		{{> divider}}
+
+		<div class="item__table">
+			<div class="item__cell">
+				<div class="item__label">Имя:</div>
+				<div class="item__info">{{firstname}}</div>
+			</div>
+
+			<div class="item__cell">
+				<div class="item__label">Фамилия:</div>
+				<div class="item__info">{{lastname}}</div>
+			</div>
+
+			<div class="item__cell">
+				<div class="item__label">Телефон:</div>
+				<div class="item__info">{{phone}}</div>
+			</div>
+
+			<div class="item__cell">
+				<div class="item__label">Электронная почта:</div>
+				<div class="item__info">{{email}}</div>
+			</div>
+		</div>
+
+		{{> divider}}
+
+		<div class="item__cell">
+			<div class="item__label">Адрес доставки:</div>
+			<div class="item__info">ул. Центральная, 14, кв. 36, г. Киев, Украина</div>
+		</div>
+
+		<div class="item__cell">
+			<div class="item__label">Название товара:</div>
+			<div class="item__info">{{productTitle}}</div>
+		</div>
+
+		{{> divider}}
+
+		<div class="item__table">
+			<div class="item__cell">
+				<div class="item__label">Стоимость товаров:</div>
+				<div class="item__info">{{productPrice}}</div>
+			</div>
+
+			<div class="item__cell">
+				<div class="item__label">К оплате:</div>
+				<div class="item__info">{{totalPrice}}</div>
+			</div>
+
+			<div class="item__cell">
+				<div class="item__label">Стоимость доставки:</div>
+				<div class="item__info">{{deliveryPrice}}</div>
+			</div>
+
+			<div class="item__cell">
+				<div class="item__label">Начислено бонусов:</div>
+				<div class="item__info">{{bonus}}</div>
+			</div>
+		</div>
+
+		{{> divider}}
+
+
+
+		<a href="/purchase-edit-user?id={{id}}" class="a-button">
+			{{> button text="Изменить данные"}}
+		</a>
+
+		{{/with}}
+	</div>
+</div>
+
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+	Адже наш layout/default.hbs має вже структуру HTML
+	}}
