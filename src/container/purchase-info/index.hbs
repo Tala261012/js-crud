@@ -8,74 +8,35 @@
 		{{> heading title = "Информация о заказе"}}
 
 		{{#with data}}
-		<div class="item__cell">
-			<div class="item__label">ID:</div>
-			<div class="item__info">{{id}}</div>
-		</div>
+
+		{{> infofield label="ID:" value=id }}
 
 		{{> divider}}
 
 		<div class="item__table">
-			<div class="item__cell">
-				<div class="item__label">Имя:</div>
-				<div class="item__info">{{firstname}}</div>
-			</div>
 
-			<div class="item__cell">
-				<div class="item__label">Фамилия:</div>
-				<div class="item__info">{{lastname}}</div>
-			</div>
+			{{> infofield label="Имя:" value=firstname }}
+			{{> infofield label="Фамилия:" value=lastname }}
+			{{> infofield label="Телефон:" value=phone }}
+			{{> infofield label="Электронная почта:" value=email }}
 
-			<div class="item__cell">
-				<div class="item__label">Телефон:</div>
-				<div class="item__info">{{phone}}</div>
-			</div>
-
-			<div class="item__cell">
-				<div class="item__label">Электронная почта:</div>
-				<div class="item__info">{{email}}</div>
-			</div>
 		</div>
 
 		{{> divider}}
 
-		<div class="item__cell">
-			<div class="item__label">Адрес доставки:</div>
-			<div class="item__info">ул. Центральная, 14, кв. 36, г. Киев, Украина</div>
-		</div>
-
-		<div class="item__cell">
-			<div class="item__label">Название товара:</div>
-			<div class="item__info">{{productTitle}}</div>
-		</div>
+		{{> infofield label="Адрес доставки:" value="ул. Центральная, 14, кв. 36, г. Киев, Украина" }}
+		{{> infofield label="Название товара:" value=productTitle }}
 
 		{{> divider}}
 
 		<div class="item__table">
-			<div class="item__cell">
-				<div class="item__label">Стоимость товаров:</div>
-				<div class="item__info">{{productPrice}}</div>
-			</div>
-
-			<div class="item__cell">
-				<div class="item__label">К оплате:</div>
-				<div class="item__info">{{totalPrice}}</div>
-			</div>
-
-			<div class="item__cell">
-				<div class="item__label">Стоимость доставки:</div>
-				<div class="item__info">{{deliveryPrice}}</div>
-			</div>
-
-			<div class="item__cell">
-				<div class="item__label">Начислено бонусов:</div>
-				<div class="item__info">{{bonus}}</div>
-			</div>
+			{{> infofield label="Стоимость товаров:" value=productPrice }}
+			{{> infofield label="К оплате:" value=totalPrice }}
+			{{> infofield label="Стоимость доставки:" value=deliveryPrice }}
+			{{> infofield label="Начислено бонусов:" value=bonus }}
 		</div>
 
 		{{> divider}}
-
-
 
 		<a href="/purchase-edit-user?id={{id}}" class="a-button">
 			{{> button text="Изменить данные"}}
