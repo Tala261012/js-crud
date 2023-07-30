@@ -3,9 +3,23 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<main>
+<div class="page">
+	{{> heading title = "Список заказов"}}
 
-</main>
+	{{#with data}}
+	<div class="purchase-list">
+
+		{{#each purchaseList}}
+		{{> purchase-list-item item=this}}
+		{{/each}}
+
+	</div>
+	{{/with}}
+
+	<a href="/" class="a-button">
+		{{> button text="К списку товаров"}}
+	</a>
+</div>
 
 
 

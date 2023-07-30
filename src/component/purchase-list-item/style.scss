@@ -1,0 +1,57 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../component/divider/style.scss' as divider;
+
+.purchase-list__item {
+	display: grid;
+	grid-template-columns: minmax(50px, 80px) minmax(200px, 450px) 1fr 1fr;
+
+	gap: s.space(6);
+
+	width: 100%;
+}
+
+.purchase-list__id {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.purchase-list__id--href {
+	color: s.color(light-gray);
+	font-size: s.size(default);
+	text-decoration: none;
+	
+	transition-property: color;
+	transition-duration: 0.5s;
+
+	cursor: pointer;
+}
+
+.purchase-list__id--href:hover {
+	color: s.color("delete");
+}
+
+.purchase-list__cell {
+	display: flex;
+	flex-direction: column;
+	gap: s.space(3);
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.purchase-list__label {
+	font-size: s.size(label);
+	color: s.color(light-gray);
+}
+
+.purchase-list__price {
+	color: s.color(dark-grey);
+	font-weight: bold;
+}
+
+.purchase-list__info {
+	max-width: 500px;
+	width: 100%;
+	min-width: 200px;
+}

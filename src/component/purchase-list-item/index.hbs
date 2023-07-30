@@ -1,0 +1,24 @@
+{{#with item}}
+<div class="purchase-list__item">
+	<div class="purchase-list__id"> <a class="purchase-list__id--href" href="/purchase-info?id={{id}}&bonus={{bonus}}">ID:
+			{{id}}</a>
+	</div>
+
+	<div class="purchase-list__cell">
+		<div class="purchase-list__label">Товар</div>
+		<div class="purchase-list__info">{{productTitle}}</div>
+	</div>
+
+	<div class="purchase-list__cell">
+		<div class="purchase-list__label">Сумма заказа</div>
+		<div class="purchase-list__price">{{totalPrice}}₴</div>
+	</div>
+
+	<div class="purchase-list__cell">
+		<div class="purchase-list__label">Начисленные бонусы</div>
+		<div class="purchase-list__price">{{bonus}}₴</div>
+	</div>
+</div>
+
+{{> divider}}
+{{/with}}

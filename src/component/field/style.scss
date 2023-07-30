@@ -1,0 +1,23 @@
+@use '../../lib/service.scss' as s;
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: s.space(1);
+	width: 100%;
+}
+
+.field__label {
+	font-size: s.size('label');
+}
+
+.field__input {
+	border: 1px solid s.color('light');
+	border-radius: s.radius('input');
+	padding: s.space(2);
+}
+
+.field--disabled {  //TODO скрытые поля для передачи информации дальше, в другое окно
+	position: absolute;
+	display: none;
+}
