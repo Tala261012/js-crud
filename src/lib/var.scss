@@ -8,6 +8,10 @@ $colorMap: (
 	light-gray: #838383,
 	black: #000,
 	delete: #f84b07,
+// spotify -----------------------------------------------	
+	dark: #121212,
+	light-spotify: rgb(255, 246, 221),
+	border: #808080,
 );
 
 @function color ($key) {
@@ -17,6 +21,7 @@ $colorMap: (
 // my-----------------------------------------------
 $fontSizeMap: (
 	pageTitle: 26px,
+	playlistTitle: 24px,
 	formTitle:20px,
 	default: 16px,
 	label: 14px,

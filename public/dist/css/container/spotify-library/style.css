@@ -1,0 +1,29 @@
+.library__header {
+  display: grid;
+  grid-template-columns: auto 54px 54px;
+  gap: 36px;
+  align-items: center;
+}
+
+.library {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px 32px;
+}
+.library__item {
+  display: grid;
+  gap: 16px;
+}
+.library__image {
+  width: 284px;
+}
+.library__title {
+  font-size: 24px;
+  color: #ddd;
+}
+.library__amount {
+  font-size: 16px;
+  color: #838383;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+.add-button {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 24px;
+  color: #ddd;
+  font-size: 18px;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: 92px 1fr 42px;
+  gap: 28px;
+  align-items: center;
+}
+.track__list {
+  display: grid;
+  gap: 28px;
+}
+.track__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.track__name {
+  font-size: 24px;
+  color: #ddd;
+}
+.track__author {
+  font-size: 16px;
+  color: #838383;
+}
+
+/*# sourceMappingURL=style.css.map */

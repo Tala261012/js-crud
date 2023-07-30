@@ -1,5 +1,6 @@
 @use '../../lib/service.scss' as s;
 
+//1-user   2-product   3-purchase
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -19,4 +20,48 @@ body {
 		margin-bottom: s.space(4);
 		text-align: left;
 	}
+}
+
+// spotify -------------------------------------------
+a {
+	text-decoration: none;
+	color: inherit;
+
+	transition: opasity 0.6s;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.main {
+	background-color: s.color(dark);
+
+	height: 100%;
+
+	color: s.color(light);
+
+	display: flex;
+	justify-content: center;
+	padding: s.space(6) s.space(2);
+}
+
+.main__content {
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	gap: s.space(15);
+}
+
+.title {
+	font-size: s.size(playlistTitle);
+}
+
+.title--center {
+	text-align: center;
+}
+
+.title--big {
+	font-size: 38px;
 }
